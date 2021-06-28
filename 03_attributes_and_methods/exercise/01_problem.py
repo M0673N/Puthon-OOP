@@ -12,9 +12,9 @@ class PhotoAlbum:
             if len(self.photos[page - 1]) < 4:
                 self.photos[page - 1].append(label)
                 slot = self.photos[page - 1].index(label) + 1
-                return f"{label} photo added successfully on page {page} slot {slot}"
+                return f"{label} photo added successfully on page {page} spot {slot}"
         else:
-            return "No more free slots"
+            return "No more free spots"
 
     def display(self):
         result = "-" * 11 + "\n"
