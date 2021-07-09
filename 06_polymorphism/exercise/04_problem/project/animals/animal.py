@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class Animal(ABC):
+    @abstractmethod
     def __init__(self, name, weight):
         self.name = name
         self.weight = weight
@@ -9,6 +10,7 @@ class Animal(ABC):
 
 
 class Bird(Animal):
+    @abstractmethod
     def __init__(self, name, weight, wing_size):
         super().__init__(name, weight)
         self.wing_size = wing_size
@@ -18,6 +20,7 @@ class Bird(Animal):
 
 
 class Mammal(Animal):
+    @abstractmethod
     def __init__(self, name, weight, living_region):
         super().__init__(name, weight)
         self.living_region = living_region

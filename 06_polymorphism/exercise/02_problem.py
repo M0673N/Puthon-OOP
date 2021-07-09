@@ -30,8 +30,7 @@ class Group:
         return Group(self.name + other.name, [] + self.people + other.people)
 
     def __iter__(self):
-        for person in self.people:
-            yield person
+        return iter(self.people)
 
     def __getitem__(self, item):
         return self.people[item]

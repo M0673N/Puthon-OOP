@@ -7,10 +7,12 @@ class Animal(ABC):
         self.age = age
         self.gender = gender
 
+    @staticmethod
     @abstractmethod
-    def make_sound(self):
+    def make_sound():
         pass
 
+    @staticmethod
     @abstractmethod
-    def __repr__(self):
+    def __repr__():
         pass

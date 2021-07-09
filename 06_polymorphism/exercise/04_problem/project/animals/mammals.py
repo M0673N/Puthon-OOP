@@ -2,6 +2,9 @@ from project.animals.animal import Mammal
 
 
 class Mouse(Mammal):
+    def __init__(self, name, weight, living_region):
+        super().__init__(name, weight, living_region)
+
     @staticmethod
     def make_sound():
         return "Squeak"
@@ -14,6 +17,9 @@ class Mouse(Mammal):
 
 
 class Dog(Mammal):
+    def __init__(self, name, weight, living_region):
+        super().__init__(name, weight, living_region)
+
     @staticmethod
     def make_sound():
         return "Woof!"
@@ -26,6 +32,9 @@ class Dog(Mammal):
 
 
 class Cat(Mammal):
+    def __init__(self, name, weight, living_region):
+        super().__init__(name, weight, living_region)
+
     @staticmethod
     def make_sound():
         return "Meow"
@@ -38,6 +47,9 @@ class Cat(Mammal):
 
 
 class Tiger(Mammal):
+    def __init__(self, name, weight, living_region):
+        super().__init__(name, weight, living_region)
+
     @staticmethod
     def make_sound():
         return "ROAR!!!"

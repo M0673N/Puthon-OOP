@@ -5,5 +5,6 @@ class Tomcat(Cat):
     def __init__(self, name, age):
         super().__init__(name, age, "Male")
 
-    def make_sound(self):
+    @staticmethod
+    def make_sound():
         return "Hiss"

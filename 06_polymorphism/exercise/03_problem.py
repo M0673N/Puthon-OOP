@@ -8,14 +8,15 @@ class Account:
         return f"Account of {self.owner} with starting amount: {self.amount}"
 
     def __repr__(self):
-        return f'Account({self.owner}, {self.amount})'
+        return f'Account({self.owner}, {self.balance})'
 
     def __len__(self):
         return len(self._transactions)
 
     def __iter__(self):
-        for transaction in self._transactions:
-            yield transaction
+        return iter(self._transactions)
+        # for transaction in self._transactions:
+        #     yield transaction
 
     def __getitem__(self, item):
         return self._transactions[item]
@@ -48,18 +49,15 @@ class Account:
 
     @staticmethod
     def validate_transaction(account, amount_to_add):
-        if account.amount + amount_to_add < 0:
+        if account.balance + amount_to_add < 0:
             raise ValueError("sorry cannot go in debt!")
-        account.amount -= amount_to_add
+        account.add_transaction(amount_to_add)
         return f"New balance: {account.balance()}"
 
     def add_transaction(self, amount):
         if not type(amount) == int:
             raise ValueError("please use int for amount")
         self._transactions.append(amount)
-
-    def balance(self):
-        return sum(self._transactions) + self.amount
 
     @property
     def balance(self):
