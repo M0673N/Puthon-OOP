@@ -11,7 +11,7 @@ class Person:
         return Person(self.name, other.surname)
 
     def __repr__(self):
-        return f"Person {self.pin}: {self.name} {self.surname}"
+        return f"{self.name} {self.surname}"
 
 
 class Group:
@@ -27,13 +27,15 @@ class Group:
                f" {', '.join([person.name + ' ' + person.surname for person in self.people])}"
 
     def __add__(self, other):
-        return Group(self.name + other.name, [] + self.people + other.people)
+        return Group(f"{self.name} {other.name}", [] + self.people + other.people)
 
     def __iter__(self):
+        for person in self.people:
+            yield f"Person {person.pin}: {person}"
         return iter(self.people)
 
     def __getitem__(self, item):
-        return self.people[item]
+        return f"Person {self.people[item].pin}: {self.people[item]}"
 
 
 # p0 = Person('Aliko', 'Dangote')

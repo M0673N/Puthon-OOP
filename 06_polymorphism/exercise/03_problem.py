@@ -52,7 +52,7 @@ class Account:
         if account.balance + amount_to_add < 0:
             raise ValueError("sorry cannot go in debt!")
         account.add_transaction(amount_to_add)
-        return f"New balance: {account.balance()}"
+        return f"New balance: {account.balance}"
 
     def add_transaction(self, amount):
         if not type(amount) == int:
@@ -64,27 +64,27 @@ class Account:
         return sum(self._transactions) + self.amount
 
 
-acc = Account('bob', 10)
-acc2 = Account('john')
-print(acc)
-print(repr(acc))
-acc.add_transaction(20)
-acc.add_transaction(-20)
-acc.add_transaction(30)
-print(acc.balance)
-print(len(acc))
-for transaction in acc:
-    print(transaction)
-print(acc[1])
-print(list(reversed(acc)))
-acc2.add_transaction(10)
-acc2.add_transaction(60)
-print(acc > acc2)
-print(acc >= acc2)
-print(acc < acc2)
-print(acc <= acc2)
-print(acc == acc2)
-print(acc != acc2)
-acc3 = acc + acc2
-print(acc3)
-print(acc3._transactions)
+# acc = Account('bob', 10)
+# acc2 = Account('john')
+# print(acc)
+# print(repr(acc))
+# acc.add_transaction(20)
+# acc.add_transaction(-20)
+# acc.add_transaction(30)
+# print(acc.balance)
+# print(len(acc))
+# for transaction in acc:
+#     print(transaction)
+# print(acc[1])
+# print(list(reversed(acc)))
+# acc2.add_transaction(10)
+# acc2.add_transaction(60)
+# print(acc > acc2)
+# print(acc >= acc2)
+# print(acc < acc2)
+# print(acc <= acc2)
+# print(acc == acc2)
+# print(acc != acc2)
+# acc3 = acc + acc2
+# print(acc3)
+# print(acc3._transactions)
