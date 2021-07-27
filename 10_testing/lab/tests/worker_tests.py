@@ -23,16 +23,18 @@ class WorkerTests(unittest.TestCase):
 
     def test_work__negative_or_zero_energy__expect_error(self):
         self.worker.energy = 0
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as context:
             self.worker.work()
+        self.assertEqual('Not enough energy.', str(context.exception))
         self.worker.energy = -5
-        with self.assertRaises(Exception):
+        with self.assertRaises(Exception) as context:
             self.worker.work()
+        self.assertEqual('Not enough energy.', str(context.exception))
 
     def test_work__expect_increased_salary(self):
         self.worker.work()
         expected_result = 1500
-        actual_result = self.worker.salary
+        actual_result = self.worker.money
         self.assertEqual(expected_result, actual_result)
 
     def test_work__expect_decreased_energy(self):
